@@ -2,13 +2,15 @@
 
 const Users = require('../models/user.js');
 
-async function addUser(req, res) {
+function addUser(req, res) {
   let username = req.body.username;
-  // await Users.remove({});
-  Users.create({ username: username })
-    .then(user => res.redirect('/'))
-    .catch(error => res.send("User already exists!"));
-  // console.log("all users:", await Users.find());
+  if(username === "")
+    res.send("Invalid username!");
+  else {
+    Users.create({ username: username })
+      .then(user => res.json(user))
+      .catch(err => res.send("User already exists!"));
+  }
 }
 
 function findUser(username) {
