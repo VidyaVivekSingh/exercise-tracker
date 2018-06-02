@@ -19,8 +19,11 @@ block content
                 input(type="text", name="date", placeholder="date (yyyy-mm-dd)")
                 input(type="submit")
     div(class="container")
-        h4 Get the exercises
-        code GET /api/exercise/log?username={username}&from=[yyyy-mm-dd]&to=[yyyy-mm-dd]&limit=[LIMIT]
+        h4 Get the Exercises
+        p: code GET /api/exercise/log?username={username}&from=[yyyy-mm-dd]&to=[yyyy-mm-dd]&limit=[LIMIT]
         p { } = required, [ ] = optional
-        h6 Example
-        code #{url}api/exercise/log?username=test&from=2018-03-01&to=2018-03-05&limit=5
+        h6 Example Usages:
+        p: code #{url}api/exercise/log?username=test
+        p: code #{url}api/exercise/log?username=test&from=2018-03-06
+        p: code #{url}api/exercise/log?username=test&from=2018-01-01&to=2018-03-05
+        p: code #{url}api/exercise/log?username=test&from=2018-01-01&to=2019-06-05&limit=5

@@ -1,4 +1,7 @@
 footer {
-  margin-top: 25%;
   text-align: center;
+}
+
+.container {
+  margin-top: 10px;
 }
