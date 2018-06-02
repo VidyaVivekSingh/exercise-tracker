@@ -1,6 +1,6 @@
 'use strict';
 
-const mongoose = require('mongoose');
+const Exercises = require('../models/exercise.js');
 
 module.exports = (req, res) => {
   console.log("addExercise req.body:", req.body);

@@ -1,10 +1,12 @@
 'use strict';
 
-const mongoose = require('mongoose');
+const Users = require('../models/user.js');
 
-module.exports = (req, res) => {
+module.exports = async (req, res) => {
   let username = req.body.username;
-  console.log("req.body:", req.body);
-  console.log("username:", username);
-  res.redirect('/');
+  // await Users.remove({});
+  Users.create({ username: username })
+    .then(user => res.redirect('/'))
+    .catch(error => res.send("User already exists!"));
+  // console.log("all users:", await Users.find());
 };
