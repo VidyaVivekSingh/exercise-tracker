@@ -4,14 +4,19 @@ block content
     div(class="container title")
         h2 Exercise Tracker
     div(class="container")
-        ol(class="example") Example Usage:
-            li: code.
-                test
-            li: code.
-                test2
-
-        //h4 Upload a File
-        //form(action="/upload", method="POST", enctype="multipart/form-data")
-        //    div(class="container")
-        //        input(type="file", name="givenFile")
-        //        input(type="submit")
+        h4 Add a New User
+        form(action="/api/exercise/new-user", method="POST")
+            div(class="container")
+                input(type="text", name="username", placeholder="username")
+                input(type="submit")
+    div(class="container")
+        h4 Add a New Exercise
+        form(action="/api/exercise/add", method="POST")
+            div(class="container")
+                input(type="text", name="username", placeholder="username*")
+                input(type="text", name="description", placeholder="description*")
+                input(type="text", name="duration", placeholder="duration* (minutes)")
+                input(type="text", name="date", placeholder="date (yyyy-mm-dd)")
+                input(type="submit")
+    div(class="container")
+        h4 Get the users's exercises
